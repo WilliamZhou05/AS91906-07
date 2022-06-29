@@ -4,9 +4,9 @@ from functools import partial  # a quick way to make a callback function
 from tkinter import font #importing font
 #importing Tkinter
 
-font_colour = "#00ffff"
-border_colour = "#00ffff"
-background_colour = "#000000"
+font_colour = "#000000"
+border_colour = "#ffffff"
+background_colour = "#ffffff"
 #selecting colours for certain objects
 
 class Situation(tk.Frame): #making a frame
@@ -15,41 +15,43 @@ class Situation(tk.Frame): #making a frame
         story_label = tk.Label(self, text = story, bg = background_colour, fg = font_colour, justify = tk.LEFT, anchor = tk.NW, font = ("Play", 10))#creates the label of the main story code
         story_label.pack()#places the label
 
-def beginning(): #the beginning destroys the starter boxes
+def signup(): #the beginning destroys the starter boxes
     title_text.destroy()
-    start_button.destroy()
-    name_entry_box.destroy()
+    signup_button.destroy()
+    username_entry_box.destroy()
     name_text.destroy()
-    load() # load the first story
+    
 
-def load(situation = None):#defining the loading
-    frame = Situation(root, **SITUATIONS.get(situation))#grabs the situations
-    frame.config(bg = background_colour)#colours the background
-    frame.pack()#places the frame
+
 
 #WINDOW
 root = tk.Tk()
 root.geometry('500x500-500-300')
-root.title('The Adventure')
+root.title('Exam Planner')
 root.config(background = background_colour)
 
 #TEXT BOX
-title_text = tk.Label(root, text = "Welcome To The Adventure", bg = background_colour, fg = font_colour, font = ("bold", "20"))
+title_text = tk.Label(root, text = "Exam Planner 2022", bg = background_colour, fg = font_colour, font = ("bold", "20"))
 title_text.place(relx = .5, rely = .3, anchor = 'c')
 
+#START
+signup_button = tk.Button(root, text = "START", highlightthickness = 2, command = signup, bg = background_colour, fg = font_colour)
+signup_button.place(relx = .5, rely = .6, anchor = 'c')
+signup_button.config(highlightbackground = font_colour, highlightcolor= "blue")
+
+#Login System  V
+
 #NAME ENTRY BOX
+username = tk.StringVar(root)
+username_entry_box = tk.Entry(root, highlightthickness = 2, bg = "#ffffff", fg = font_colour, textvariable=username)
+username_entry_box.place(relx = .5, rely = .5, anchor = 'c')
+username_entry_box.config(highlightbackground = font_colour, highlightcolor= "blue")
+
+
+#NAME ENTRY
 name_text = tk.Label(root, text = "Please enter your name below:", bg = background_colour, fg = font_colour)
 name_text.place(relx = .5, rely = .4, anchor = 'c')
 
-#NAME ENTRY
-name_entry_box = tk.Entry(root, highlightthickness = 2, bg = "#333333", fg = font_colour)
-name_entry_box.place(relx = .5, rely = .5, anchor = 'c')
-name_entry_box.config(highlightbackground = font_colour, highlightcolor= "blue")
-
-#START
-start_button = tk.Button(root, text = "START", highlightthickness = 2, command = beginning, bg = background_colour, fg = font_colour)
-start_button.place(relx = .5, rely = .6, anchor = 'c')
-start_button.config(highlightbackground = font_colour, highlightcolor= "blue")
 
 #THE LOOP
 root.mainloop()
@@ -68,6 +70,7 @@ def signup():
         print("You have registered successfully!")
     else:
         print("Password is not same as above! \n")
+
 def login():
     email = input("Enter email: ")
     pwd = input("Enter password: ")
