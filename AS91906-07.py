@@ -1,99 +1,171 @@
-import hashlib
 import tkinter as tk
-from functools import partial  # a quick way to make a callback function
-from tkinter import font #importing font
-#importing Tkinter
+from tkinter import *
+from tkinter import messagebox
+from tkinter import font
+from functools import partial
 
-font_colour = "#000000"
-border_colour = "#ffffff"
-background_colour = "#ffffff"
-#selecting colours for certain objects
 
-class Situation(tk.Frame): #making a frame
-    def __init__(self, master = None, story = '', buttons = [], **kwargs):#sets up the main part of the code kwargs is a function that allows me to put as much story inside the code as possible
-        tk.Frame.__init__(self, master, **kwargs)#creates the frame for the main code
-        story_label = tk.Label(self, text = story, bg = background_colour, fg = font_colour, justify = tk.LEFT, anchor = tk.NW, font = ("Play", 10))#creates the label of the main story code
-        story_label.pack()#places the label
-
-def signup(): #the beginning destroys the starter boxes
-    title_text.destroy()
-    signup_button.destroy()
-    username_entry_box.destroy()
-    name_text.destroy()
+'''
+understanding the parameters in the init function (constructor):
+    self represents the current object. This is a common first parameter for any method of a class. As you suggested, it's similar to Java's this.
     
+    parent represents a widget to act as the parent of the current object. All widgets in tkinter except the root window require a parent (sometimes also called a master)
+    
+    controller represents some other object that is designed to act as a common point of interaction for several pages of widgets. It is an attempt to decouple the pages. 
+    That is to say, each page doesn't need to know about the other pages. If it wants to interact with another page, such as causing it to be visible, it can ask the controller to make it visible.    
+    '''
+font_colour = "#ffffff"
+border_colour = "#000000"
+background_colour = "#000000"
+class Start(Frame):
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        
+        self.border = LabelFrame(self, bg = background_colour, fg = font_colour, font = ("Arial Bold", 20), bd=75)
+        self.border.pack(fill="both", expand="yes")
+
+        self.login_label = Label(self.border, text="Login:",fg = font_colour, font=("Arial Bold", 20), bg=border_colour)
+        self.login_label.place(x=40, y=10)
+        
+        self.user_label = Label(self.border, text="Username:",fg = font_colour, font=("Arial Bold", 15), bg=border_colour)
+        self.user_label.place(x=120, y=110)
+        self.user_entry = Entry(self.border, width = 30, text="Enter your username here", bd = 5)
+        self.user_entry.place(x=250, y=110)
+        
+        self.password_label = Label(self.border, text="Password:",fg = font_colour, font=("Arial Bold", 15), bg=border_colour)
+        self.password_label.place(x=120, y=170)
+        self.password_entry = Entry(self.border, width = 30, text="Enter your password here", show='*', bd = 5)
+        self.password_entry.place(x=250, y=170)
+        
+        def verify():
+            try:
+                with open("users.txt", "r") as f:
+                    info = f.readlines()
+                    i  = 0
+                    for e in info:
+                        self.user_name, self.user_password =e.split(",")
+                        if self.user_name.strip() == self.user_entry.get() and self.user_password.strip() == self.password_entry.get():
+                            controller.show_frame(Second)
+                            i = 1
+                            break
+                    if i==0:
+                        messagebox.showinfo("Error", "Please provide correct username and password!!")
+            except:
+                messagebox.showinfo("Error", "Couldnt open file")
+     
+         
+        self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=verify)
+        self.submitbutton.place(x=370, y=225)
+        
+        def register():
+            register_window = Tk()
+            register_window.resizable(0,0)
+            register_window.configure(bg=background_colour)
+            register_window.title("Register")
+            reg_name_label = Label(register_window, text="Username:",fg = font_colour, font=("Arial",15), bg=border_colour)
+            reg_name_label.place(x=10, y=10)
+            reg_name_entry = Entry(register_window, width=30, bd=5)
+            reg_name_entry.place(x = 200, y=10)
+            
+            reg_password_label = Label(register_window, text="Password:",fg = font_colour, font=("Arial",15), bg=border_colour)
+            reg_password_label.place(x=10, y=60)
+            reg_password_entry = Entry(register_window, width=30, show="*", bd=5)
+            reg_password_entry.place(x = 200, y=60)
+            
+            confirm_password_label = Label(register_window, text="Confirm Password:",fg = font_colour, font=("Arial",15), bg=border_colour)
+            confirm_password_label.place(x=10, y=110)
+            confirm_password_entry = Entry(register_window, width=30, show="*", bd=5)
+            confirm_password_entry.place(x = 200, y=110)
+            
+            def check():
+                if reg_name_entry.get()!="" or reg_password_entry.get()!="" or confirm_password_entry.get()!="":
+                    if reg_password_entry.get()==confirm_password_entry.get():
+                        with open("users.txt", "a") as f:
+                            f.write(reg_name_entry.get()+","+reg_password_entry.get()+"\n")
+                            messagebox.showinfo("Welcome","You are registered successfully!!")
+                            register_window.destroy()
+                    else:
+                        messagebox.showinfo("Error","Your password didn't get match!!")
+                else:
+                    messagebox.showinfo("Error", "Please fill the complete field!!")
+                    
+            self.register_button = Button(register_window, text="Sign in",fg = font_colour, font=("Arial",15), bg=border_colour, command=check)
+            self.register_button.place(x=170, y=150)
+            
+            register_window.geometry("470x220")
+            register_window.mainloop()
+            
+        self.register_button = Button(self, text="Register", bg = border_colour,fg = font_colour, font=("Arial",15), command=register)
+        self.register_button.place(x=600, y=85)
+        
+class Second(Frame):
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        self.configure(bg=background_colour)
+        
+        self.title_label = Label(self, text="Start of Appliction, Welocme to my program....",bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
+        self.title_label.place(x=40, y=150)        
+        self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
+        self.next_button.place(x=650, y=450)
+        
+        self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
+        self.back_button.place(x=100, y=450)
+        
+#A lambda function is a small anonymous function(usually we dont need to reuse it)
+#A lambda function can take any number of arguments, but can only have one expression 
+
+class Third(Frame):
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        
+        self.configure(bg=background_colour)
+        
+        self.app_label = Label(self,bg = border_colour,fg = font_colour, text="Store some content related to your \n project or what your application made for. \n All the best!!", font=("Arial Bold", 25))
+        self.app_label.place(x=40, y=150)
+        
+        self.home_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
+        self.home_button.place(x=650, y=450)
+        
+        self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
+        self.back_button.place(x=100, y=450)
+        
+'''https://pythonprogramming.net/object-oriented-programming-crash-course-tkinter/
+above link explains the new *args,**kwargs arguments used below
+Like "self," actually typing out "args" and "kwargs" is not necessary, the asterisks to the trick. It is just common to add the "args" and "kwargs." 
+So what are these? These are used to pass a variable, unknown, amount of arguments through the method. The difference between them is that args are used to pass non-keyworded arguments, 
+where kwargs are keyword arguments (hence the meshing in the name to make it kwargs). Args are your typical parameters. Kwargs, will basically be dictionaries.
+You can get by just thinking of kwargs as dictionaries that are being passed.
+'''
+        
+class Application(Tk):
+    def __init__(self, *args, **kwargs):
+        Tk.__init__(self, *args, **kwargs)
+        
+      
+        self.window = Frame(self)
+        self.window.pack()
+        
+        self.window.grid_rowconfigure(0, minsize = 500)
+        self.window.grid_columnconfigure(0, minsize = 800)
+        
+        self.frames = {}
+        for F in (Start, Second, Third):
+            frame = F(self.window, self)
+            self.frames[F] = frame
+            frame.grid(row = 0, column=0, sticky="nsew")
+            
+        self.show_frame(Start)
+        
+    def show_frame(self, page):
+        frame = self.frames[page]
+        frame.tkraise()
+        self.title("Application")
 
 
-
-#WINDOW
-root = tk.Tk()
-root.geometry('500x500-500-300')
-root.title('Exam Planner')
-root.config(background = background_colour)
-
-#TEXT BOX
-title_text = tk.Label(root, text = "Exam Planner 2022", bg = background_colour, fg = font_colour, font = ("bold", "20"))
-title_text.place(relx = .5, rely = .3, anchor = 'c')
-
-#START
-signup_button = tk.Button(root, text = "START", highlightthickness = 2, command = signup, bg = background_colour, fg = font_colour)
-signup_button.place(relx = .5, rely = .6, anchor = 'c')
-signup_button.config(highlightbackground = font_colour, highlightcolor= "blue")
-
-#Login System  V
-
-#NAME ENTRY BOX
-username = tk.StringVar(root)
-username_entry_box = tk.Entry(root, highlightthickness = 2, bg = "#ffffff", fg = font_colour, textvariable=username)
-username_entry_box.place(relx = .5, rely = .5, anchor = 'c')
-username_entry_box.config(highlightbackground = font_colour, highlightcolor= "blue")
+#start of program
+if __name__ == '__main__':           
+    app = Application()
+    app.maxsize(800,500)
+    app.mainloop()
 
 
-#NAME ENTRY
-name_text = tk.Label(root, text = "Please enter your name below:", bg = background_colour, fg = font_colour)
-name_text.place(relx = .5, rely = .4, anchor = 'c')
-
-
-#THE LOOP
-root.mainloop()
-
-def signup():
-    email = input("Enter email address: ")
-    pwd = input("Enter password: ")
-    conf_pwd = input("Confirm password: ")
-    if conf_pwd == pwd:
-        enc = conf_pwd.encode()
-        hash1 = hashlib.md5(enc).hexdigest()
-        with open("credentials.txt", "w") as f:
-             f.write(email + "\n")
-             f.write(hash1)
-        f.close()
-        print("You have registered successfully!")
-    else:
-        print("Password is not same as above! \n")
-
-def login():
-    email = input("Enter email: ")
-    pwd = input("Enter password: ")
-    auth = pwd.encode()
-    auth_hash = hashlib.md5(auth).hexdigest()
-    with open("credentials.txt", "r") as f:
-        stored_email, stored_pwd = f.read().split("\n")
-    f.close()
-    if email == stored_email and auth_hash == stored_pwd:
-         print("Logged in Successfully!")
-    else:
-         print("Login failed! \n")
-while 1:
-    print("********** Login System **********")
-    print("1.Signup")
-    print("2.Login")
-    print("3.Exit")
-    ch = int(input("Enter your choice: "))
-    if ch == 1:
-        signup()
-    elif ch == 2:
-        login()
-    elif ch == 3:
-        break
-    else:
-        print("Wrong Choice!")
