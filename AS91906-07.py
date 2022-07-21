@@ -48,7 +48,7 @@ class Start(Frame):
                 messagebox.showinfo("Error", "Couldn't open file")
      
          
-        self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
+        self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=verify)
         self.submitbutton.place(x=370, y=225)
         
         def register():
@@ -133,8 +133,10 @@ class Second(Frame):
         subjectselect5= OptionMenu(subject_window, words5,*subjects_date["Subjects"])
         subjectselect5.place(x=100, y=260)
 
-
- 
+    def show_calendar(self, controller):
+        subjects = [words1.get(), words2.get(), words3.get(), words4.get(), words5.get()]
+        if all(elem != "Please Select Your Subjects" for elem in subjects):
+            controller.show_frame(Third)
         
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
@@ -146,38 +148,39 @@ class Second(Frame):
         self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
 
-        self.level3button = Button(self, text="Level 3",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.subject())
-        self.level3button.place(x=350, y=350)
+        self.level3button = Button(self, text="Select Your Subjects:",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.subject())
+        self.level3button.place(x=300, y=350)
 
-        self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
-        self.next_button.place(x=130, y=20)
+        self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.show_calendar(controller))
+        self.next_button.place(x=160, y=20)
 
 class Third(Frame):
 
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-
         self.configure(bg=background_colour)
         self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
         self.app_label.place(x=40, y=150)
         
-        self.home_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
-        self.home_button.place(x=10, y=20)
-        
-        self.back_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
-        self.back_button.place(x=70, y=20)
-        cal = Calendar(self,height=800, selectmode='day')
+        self.home_button = Button(self, text="Exit",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: exit())
+        self.home_button.place(x=70, y=20)
 
+        self.get_dates = Button(self, text="Show exam dates",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.populate_calendar())
+        self.get_dates.place(x=330, y=20)
+        self.update_idletasks()
+        self.cal = Calendar(self,height=800, selectmode='day', month = 11, tooltipdelay=50)
+        self.cal.pack(fill="both",pady=100,padx=100, expand=True)
+
+    def populate_calendar(self):
+        self.cal.calevent_remove('all')
         subjects = [words1.get(), words2.get(), words3.get(), words4.get(), words5.get()]
         for time_slot in subjects_date['Dates']:
             for subject in subjects:
-                if time_slot['Level 3'].find(subject) != -1:
-                    print("Hello")
+                subject_list = time_slot['Level 3'].split("\n")
+                if subject in subject_list:
+                    date = datetime.datetime.strptime(time_slot['Date'], '%a %d %b %Y').date()
+                    self.cal.calevent_create(date, f"{time_slot['Time']}: {subject}", ["Subject"])
 
-       # date = datetime.datetime.strptime()
-       # cal.calevent_create(date, "test","test")
-
-        cal.pack(fill="both",pady=100,padx=100, expand=True)
         
         
 class Application(Tk):

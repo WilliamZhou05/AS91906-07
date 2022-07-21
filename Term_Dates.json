@@ -7,7 +7,6 @@
         "Business Studies",
         "Calculus",
         "Chemistry",
-        "Chemistry & Biology",
         "Chinese",
         "Classical Studies",
         "Cook Islands Maori Reo Maori Kuki Airani",
@@ -15,10 +14,8 @@
         "Drama",
         "Earth & Space Science",
         "Economics",
-        "Education for Sustainability",
         "English",
         "French",
-        "Gagana Samoa",
         "Geography",
         "German",
         "Health",
@@ -29,15 +26,11 @@
         "Latin",
         "Lea Faka-Tonga",
         "Making Music",
-        "Mathematics & Statistics",
         "Media Studies",
-        "Music",
         "Music Studies",
         "Physics",
         "Psychology",
-        "Religious Studies",
         "Samoan",
-        "Science",
         "Social Studies",
         "Spanish",
         "Statistics",
@@ -46,148 +39,148 @@
     ], 
     "Dates": [
         {
-            "Date": "Mon 7 Nov",
+            "Date": "Mon 07 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Business Studies"
         },
         {
-            "Date": "Mon 7 Nov",
+            "Date": "Mon 07 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Dance"
         },
         {
-            "Date": "Tue 8 Nov",
+            "Date": "Tue 08 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Statistics"
         },
         {
-            "Date": "Tue 8 Nov",
+            "Date": "Tue 08 Nov 2022",
             "Time": "2.00 pm",
-            "Level 3": "Te Reo Rangatira\nCook Islands Maori"
+            "Level 3": "Te Reo Rangatira\nCook Islands Maori Reo Maori Kuki Airani"
         },
         {
-            "Date": "Wed 9 Nov",
+            "Date": "Wed 09 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "History"
         },
         {
-            "Date": "Thu 10 Nov",
+            "Date": "Thu 10 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Making Music\nJapanese"
         },
         {
-            "Date": "Thu 10 Nov",
+            "Date": "Thu 10 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Samoan"
         },
         {
-            "Date": "Mon 14 Nov",
+            "Date": "Mon 14 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Calculus"
         },
         {
-            "Date": "Mon 14 Nov",
+            "Date": "Mon 14 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Agricultural & Horticultural Science\nChinese\nGerman"
         },
         {
-            "Date": "Tue 15 Nov",
+            "Date": "Tue 15 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Accounting"
         },
         {
-            "Date": "Wed 16 Nov",
+            "Date": "Wed 16 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Biology"
         },
         {
-            "Date": "Thu 17 Nov",
+            "Date": "Thu 17 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Health"
         },
         {
-            "Date": "Fri 18 Nov",
+            "Date": "Fri 18 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Chemistry"
         },
         {
-            "Date": "Fri 18 Nov",
+            "Date": "Fri 18 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Media Studies"
         },
         {
-            "Date": "Mon 21 Nov",
+            "Date": "Mon 21 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Latin\nSocial Studies\nPsychology"
         },
         {
-            "Date": "Mon 21 Nov",
+            "Date": "Mon 21 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Economics"
         },
         {
-            "Date": "Tue 22 Nov",
+            "Date": "Tue 22 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Drama\nLea Faka-Tonga"
         },
         {
-            "Date": "Wed 23 Nov",
+            "Date": "Wed 23 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "English"
         },
         {
-            "Date": "Wed 23 Nov",
+            "Date": "Wed 23 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Korean"
         },
         {
-            "Date": "Thu 24 Nov",
+            "Date": "Thu 24 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Geography"
         },
         {
-            "Date": "Thu 24 Nov",
+            "Date": "Thu 24 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Physics"
         },
         {
-            "Date": "Fri 25 Nov",
+            "Date": "Fri 25 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Classical Studies"
         },
         {
-            "Date": "Fri 25 Nov",
+            "Date": "Fri 25 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Home Economics"
         },
         {
-            "Date": "Tue 29 Nov",
+            "Date": "Tue 29 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "Te Reo Maori"
         },
         {
-            "Date": "Tue 29 Nov",
+            "Date": "Tue 29 Nov 2022",
             "Time": "2.00 pm",
             "Level 3": "Spanish"
         },
         {
-            "Date": "Wed 30 Nov",
+            "Date": "Wed 30 Nov 2022",
             "Time": "9.30 am",
             "Level 3": "French"
         },
         {
-            "Date": "Thu 1 Dec",
+            "Date": "Thu 01 Dec 2022",
             "Time": "9.30 am",
             "Level 3": "Earth & Space Science"
         },
         {
-            "Date": "Thu 1 Dec",
+            "Date": "Thu 01 Dec 2022",
             "Time": "2.00 pm",
             "Level 3": "Music Studies"
 
         },
         {
-            "Date": "Fri 2 Dec",
+            "Date": "Fri 02 Dec 2022",
             "Time": "9:30 am",
             "Level 3": "Art History"
 

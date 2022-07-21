@@ -31,6 +31,7 @@ def example1():
 def example2():
 
     top = tk.Toplevel(root)
+    top.update_idletasks()
 
     cal = Calendar(top, selectmode='none')
     date = cal.datetime.today() + cal.timedelta(days=2)
