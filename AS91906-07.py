@@ -3,17 +3,8 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import font
 from functools import partial
+from tkcalendar import Calendar
 
-
-'''
-understanding the parameters in the init function (constructor):
-    self represents the current object. This is a common first parameter for any method of a class. As you suggested, it's similar to Java's this.
-    
-    parent represents a widget to act as the parent of the current object. All widgets in tkinter except the root window require a parent (sometimes also called a master)
-    
-    controller represents some other object that is designed to act as a common point of interaction for several pages of widgets. It is an attempt to decouple the pages. 
-    That is to say, each page doesn't need to know about the other pages. If it wants to interact with another page, such as causing it to be visible, it can ask the controller to make it visible.    
-    '''
 font_colour = "#ffffff"
 border_colour = "#000000"
 background_colour = "#000000"
@@ -49,7 +40,7 @@ class Start(Frame):
                             i = 1
                             break
                     if i==0:
-                        messagebox.showinfo("Error", "Please provide correct username and password!!")
+                        messagebox.showinfo("Error", "Please provide correct username and password.")
             except:
                 messagebox.showinfo("Error", "Couldnt open file")
      
@@ -82,10 +73,10 @@ class Start(Frame):
                     if reg_password_entry.get()==confirm_password_entry.get():
                         with open("users.txt", "a") as f:
                             f.write(reg_name_entry.get()+","+reg_password_entry.get()+"\n")
-                            messagebox.showinfo("Welcome","You are registered successfully!!")
+                            messagebox.showinfo("Welcome","You are registered successfully.")
                             register_window.destroy()
                     else:
-                        messagebox.showinfo("Error","Your password didn't get match!!")
+                        messagebox.showinfo("Error","Your password is wrong.")
                 else:
                     messagebox.showinfo("Error", "Please fill the complete field!!")
                     
