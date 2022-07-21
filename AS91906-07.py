@@ -78,7 +78,7 @@ class Start(Frame):
                     else:
                         messagebox.showinfo("Error","Your password is wrong.")
                 else:
-                    messagebox.showinfo("Error", "Please fill the complete field!!")
+                    messagebox.showinfo("Error", "Please fill the complete field.")
                     
             self.register_button = Button(register_window, text="Sign in",fg = font_colour, font=("Arial",15), bg=border_colour, command=check)
             self.register_button.place(x=170, y=150)
@@ -94,31 +94,40 @@ class Second(Frame):
         Frame.__init__(self, parent)
         self.configure(bg=background_colour)
         
-        self.title_label = Label(self, text="Start of Appliction, Welocme to my program....",bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
+        self.title_label = Label(self, text="Exam Planner 2022",bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
         self.title_label.place(x=40, y=150)        
         self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
-        self.next_button.place(x=650, y=450)
+        self.next_button.place(x=10, y=20)
         
         self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
-        self.back_button.place(x=100, y=450)
-        
-#A lambda function is a small anonymous function(usually we dont need to reuse it)
-#A lambda function can take any number of arguments, but can only have one expression 
+        self.back_button.place(x=70, y=20)
 
+        
 class Third(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         
         self.configure(bg=background_colour)
         
-        self.app_label = Label(self,bg = border_colour,fg = font_colour, text="Store some content related to your \n project or what your application made for. \n All the best!!", font=("Arial Bold", 25))
+        self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
         self.app_label.place(x=40, y=150)
         
-        self.home_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
-        self.home_button.place(x=650, y=450)
+        self.home_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
+        self.home_button.place(x=10, y=20)
         
-        self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
-        self.back_button.place(x=100, y=450)
+        self.back_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
+        self.back_button.place(x=70, y=20)
+
+        cal = Calendar(self,height=800, selectmode='day')
+        date = cal.datetime.today() + cal.timedelta(days=2)
+        cal.calevent_create(date, 'Hello World', 'message')
+        cal.calevent_create(date, 'Reminder 2', 'reminder')
+        cal.calevent_create(date + cal.timedelta(days=-2), 'Reminder 1', 'reminder')
+        cal.calevent_create(date + cal.timedelta(days=3), 'Message', 'message')
+     
+        cal.tag_config('reminder', background='red', foreground='yellow')
+     
+        cal.pack(fill="both",pady=100,padx=100, expand=True)
         
 '''https://pythonprogramming.net/object-oriented-programming-crash-course-tkinter/
 above link explains the new *args,**kwargs arguments used below
