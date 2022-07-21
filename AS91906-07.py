@@ -95,6 +95,16 @@ class Start(Frame):
 class Second(Frame):
     def subject(self):
         subject_window = Tk()
+        global words1
+        global words2
+        global words3
+        global words4
+        global words5
+        words1 = StringVar(subject_window)
+        words2 = StringVar(subject_window)
+        words3 = StringVar(subject_window)
+        words4 = StringVar(subject_window)
+        words5 = StringVar(subject_window)
         subject_window.resizable(0,0)
         subject_window.minsize(width=400, height=400)
         subject_window.configure(bg=background_colour)
@@ -103,18 +113,23 @@ class Second(Frame):
         subject_label.place(x=10, y=10) 
 
         
-        subjectselect= OptionMenu (subject_window, words1, *subjects_date["Subjects"], command = lambda fff: words1 = fff)
+        words1.set("Please Select Your Subjects")
+        subjectselect= OptionMenu (subject_window, words1, *subjects_date["Subjects"])
         subjectselect.place(x=100, y=100) 
 
+        words2.set("Please Select Your Subjects")
         subjectselect2= OptionMenu(subject_window, words2,*subjects_date["Subjects"])
         subjectselect2.place(x=100, y=140) 
         
+        words3.set("Please Select Your Subjects")
         subjectselect3= OptionMenu(subject_window, words3,*subjects_date["Subjects"])
         subjectselect3.place(x=100, y=180) 
 
+        words4.set("Please Select Your Subjects")
         subjectselect4= OptionMenu(subject_window, words4,*subjects_date["Subjects"])
         subjectselect4.place(x=100, y=220) 
 
+        words5.set("Please Select Your Subjects")
         subjectselect5= OptionMenu(subject_window, words5,*subjects_date["Subjects"])
         subjectselect5.place(x=100, y=260)
 
@@ -137,16 +152,13 @@ class Second(Frame):
         self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
         self.next_button.place(x=130, y=20)
 
-
-    
-
 class Third(Frame):
 
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
 
         self.configure(bg=background_colour)
-        self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
+        self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))s
         self.app_label.place(x=40, y=150)
         
         self.home_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
@@ -155,6 +167,13 @@ class Third(Frame):
         self.back_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
         cal = Calendar(self,height=800, selectmode='day')
+
+        subjects = [words1.get(), words2.get(), words3.get(), words4.get(), words5.get()]
+        for time_slot in subjects_date['Dates']:
+            for subject in subjects:
+                if time_slot['Level 3'].find(subject) != -1:
+                    print("Hello")
+
        # date = datetime.datetime.strptime()
        # cal.calevent_create(date, "test","test")
 
@@ -185,14 +204,9 @@ class Application(Tk):
         frame.tkraise()
         self.title("Application")
 
-words1 = "Please Select Your Subjects"
-words2 = "Please Select Your Subjects"
-words3 = "Please Select Your Subjects"
-words4 = "Please Select Your Subjects"
-words5 = "Please Select Your Subjects"
+subjects_date = json.load(open("Term_Dates.json"))
 #start of program
-if __name__ == '__main__':      
-    subjects_date = json.load(open("Term_Dates.json"))    
+if __name__ == '__main__':        
     app = Application()
     app.maxsize(800,500)
     app.mainloop()
