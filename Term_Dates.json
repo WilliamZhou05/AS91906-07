@@ -1,282 +1,300 @@
-[
- {
-  "Date": "Mon 7 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Te Reo Rangatira",
-  "Level 2": "Physics",
-  "Level 3": "Business Studies",
-  "Scholarship": "Agricultural &\r\nHorticultural Science"
- },
- {
-  "Date": "Mon 7 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Chinese\nChinese (Mandarin)",
-  "Level 2": "Media Studies",
-  "Level 3": "Dance",
-  "Scholarship": "Calculus"
- },
- {
-  "Date": "Tue 8 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Agricultural &\r\nHorticultural Science",
-  "Level 2": "Art History",
-  "Level 3": "Statistics",
-  "Scholarship": null
- },
- {
-  "Date": "Tue 8 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Geography",
-  "Level 2": "Spanish",
-  "Level 3": "Te Reo Rangatira\nCook Islands Māori",
-  "Scholarship": "Drama"
- },
- {
-  "Date": "Wed 9 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Lea Faka-Tonga",
-  "Level 2": "Mathematics & Statistics",
-  "Level 3": null,
-  "Scholarship": "Biology"
- },
- {
-  "Date": "Wed 9 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Music",
-  "Level 2": "Accounting",
-  "Level 3": "History",
-  "Scholarship": "French"
- },
- {
-  "Date": "Thu 10 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Mathematics &\r\nStatistics",
-  "Level 2": null,
-  "Level 3": "Making Music\nJapanese",
-  "Scholarship": "Classical Studies"
- },
- {
-  "Date": "Thu 10 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Korean",
-  "Level 2": "Drama",
-  "Level 3": "Samoan",
-  "Scholarship": "Statistics"
- },
- {
-  "Date": "Mon 14 Nov",
-  "Time": "9.30 am",
-  "Level 1": "French",
-  "Level 2": "Te Reo Māori",
-  "Level 3": "Calculus",
-  "Scholarship": "Samoan"
- },
- {
-  "Date": "Mon 14 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Economics",
-  "Level 2": "Korean",
-  "Level 3": "Agricultural &\nHorticultural Science\nChinese\nGerman",
-  "Scholarship": null
- },
- {
-  "Date": "Tue 15 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Science",
-  "Level 2": "Social Studies",
-  "Level 3": null,
-  "Scholarship": "History"
- },
- {
-  "Date": "Tue 15 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Samoan\nGagana Sāmoa\nSpanish",
-  "Level 2": "Geography",
-  "Level 3": "Accounting",
-  "Scholarship": null
- },
- {
-  "Date": "Wed 16 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Cook Islands Māori\nReo Māori Kūki ‘Āirani",
-  "Level 2": "English",
-  "Level 3": null,
-  "Scholarship": "Religious Studies"
- },
- {
-  "Date": "Wed 16 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "History",
-  "Level 2": "Chinese",
-  "Level 3": "Biology",
-  "Scholarship": "German"
- },
- {
-  "Date": "Thu 17 Nov",
-  "Time": "9.30 am",
-  "Level 1": "English",
-  "Level 2": "Lea Faka-Tonga\nCook Islands Māori",
-  "Level 3": null,
-  "Scholarship": "English"
- },
- {
-  "Date": "Thu 17 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Drama",
-  "Level 2": "Chemistry",
-  "Level 3": "Health",
-  "Scholarship": "Physics"
- },
- {
-  "Date": "Fri 18 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Business Studies",
-  "Level 2": "History",
-  "Level 3": "Chemistry",
-  "Scholarship": "Te Reo Rangatira"
- },
- {
-  "Date": "Fri 18 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Biology",
-  "Level 2": "Music",
-  "Level 3": "Media Studies",
-  "Scholarship": "Accounting"
- },
- {
-  "Date": "Mon 21 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Art History\r\nTe Reo Māori",
-  "Level 2": "Japanese",
-  "Level 3": "Latin\nSocial Studies\nPsychology",
-  "Scholarship": "Chemistry"
- },
- {
-  "Date": "Mon 21 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Classical Studies",
-  "Level 2": "Health",
-  "Level 3": "Economics",
-  "Scholarship": null
- },
- {
-  "Date": "Tue 22 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Media Studies",
-  "Level 2": "Earth & Space Science",
-  "Level 3": "Drama\nLea Faka-Tonga",
-  "Scholarship": "Geography"
- },
- {
-  "Date": "Tue 22 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Chemistry\nChemistry & Biology",
-  "Level 2": "Classical Studies",
-  "Level 3": null,
-  "Scholarship": "Economics"
- },
- {
-  "Date": "Wed 23 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Accounting",
-  "Level 2": null,
-  "Level 3": "English",
-  "Scholarship": null
- },
- {
-  "Date": "Wed 23 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Home Economics",
-  "Level 2": "Economics",
-  "Level 3": "Korean",
-  "Scholarship": "Media Studies"
- },
- {
-  "Date": "Thu 24 Nov",
-  "Time": "9.30 am",
-  "Level 1": "German",
-  "Level 2": "Biology",
-  "Level 3": "Geography",
-  "Scholarship": null
- },
- {
-  "Date": "Thu 24 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Dance",
-  "Level 2": "Te Reo Rangatira",
-  "Level 3": "Physics",
-  "Scholarship": null
- },
- {
-  "Date": "Fri 25 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Physics\nPhysics Earth & Space\nScience",
-  "Level 2": "Home Economics",
-  "Level 3": "Classical Studies",
-  "Scholarship": "Te Reo Māori"
- },
- {
-  "Date": "Fri 25 Nov",
-  "Time": "2.00 pm",
-  "Level 1": null,
-  "Level 2": "German",
-  "Level 3": "Home Economics",
-  "Scholarship": "Art History"
- },
- {
-  "Date": "Tue 29 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Japanese",
-  "Level 2": "Latin",
-  "Level 3": "Te Reo Māori",
-  "Scholarship": null
- },
- {
-  "Date": "Tue 29 Nov",
-  "Time": "2.00 pm",
-  "Level 1": null,
-  "Level 2": "French",
-  "Level 3": "Spanish",
-  "Scholarship": "Latin"
- },
- {
-  "Date": "Wed 30 Nov",
-  "Time": "9.30 am",
-  "Level 1": "Religious Studies",
-  "Level 2": "Business Studies",
-  "Level 3": "French",
-  "Scholarship": "Japanese"
- },
- {
-  "Date": "Wed 30 Nov",
-  "Time": "2.00 pm",
-  "Level 1": "Latin",
-  "Level 2": "Agricultural &\nHorticultural Science",
-  "Level 3": null,
-  "Scholarship": null
- },
- {
-  "Date": "Thu 1 Dec",
-  "Time": "9.30 am",
-  "Level 1": "Health",
-  "Level 2": "Education for Sustainability\nSamoan",
-  "Level 3": "Earth & Space Science",
-  "Scholarship": "Chinese"
- },
- {
-  "Date": "Thu 1 Dec",
-  "Time": "2.00 pm",
-  "Level 1": null,
-  "Level 2": null,
-  "Level 3": "Music Studies",
-  "Scholarship": "Spanish"
- },
- {
-  "Date": "Fri 2 Dec",
-  "Time": "9:30 am",
-  "Level 1": "Social Studies",
-  "Level 2": "Dance",
-  "Level 3": "Art History",
-  "Scholarship": "Earth & Space Science"
- }
-]
+{
+    "Subjects":[
+        "Spanish",
+        "Homeless"
+    ], 
+    "Dates": [
+        {
+            "Date": "Mon 7 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Te Reo Rangatira",
+            "Level 2": "Physics",
+            "Level 3": "Business Studies",
+            "Scholarship": "Agricultural & Horticultural Science"
+        },
+        {
+            "Date": "Mon 7 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Chinese\nChinese (Mandarin)",
+            "Level 2": "Media Studies",
+            "Level 3": "Dance",
+            "Scholarship": "Calculus"
+        },
+        {
+            "Date": "Tue 8 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Agricultural & Horticultural Science",
+            "Level 2": "Art History",
+            "Level 3": "Statistics",
+            "Scholarship": null
+        },
+        {
+            "Date": "Tue 8 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Geography",
+            "Level 2": "Spanish",
+            "Level 3": "Te Reo Rangatira\nCook Islands Māori",
+            "Scholarship": "Drama"
+        },
+        {
+            "Date": "Wed 9 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Lea Faka-Tonga",
+            "Level 2": "Mathematics & Statistics",
+            "Level 3": null,
+            "Scholarship": "Biology"
+        },
+        {
+            "Date": "Wed 9 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Music",
+            "Level 2": "Accounting",
+            "Level 3": "History",
+            "Scholarship": "French"
+        },
+        {
+            "Date": "Thu 10 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Mathematics & Statistics",
+            "Level 2": null,
+            "Level 3": "Making Music\nJapanese",
+            "Scholarship": "Classical Studies"
+        },
+        {
+            "Date": "Thu 10 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Korean",
+            "Level 2": "Drama",
+            "Level 3": "Samoan",
+            "Scholarship": "Statistics"
+        },
+        {
+            "Date": "Mon 14 Nov",
+            "Time": "9.30 am",
+            "Level 1": "French",
+            "Level 2": "Te Reo Māori",
+            "Level 3": "Calculus",
+            "Scholarship": "Samoan"
+        },
+        {
+            "Date": "Mon 14 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Economics",
+            "Level 2": "Korean",
+            "Level 3": "Agricultural & Horticultural Science\nChinese\nGerman",
+            "Scholarship": null
+        },
+        {
+            "Date": "Tue 15 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Science",
+            "Level 2": "Social Studies",
+            "Level 3": null,
+            "Scholarship": "History"
+        },
+        {
+            "Date": "Tue 15 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Samoan\nGagana Sāmoa\nSpanish",
+            "Level 2": "Geography",
+            "Level 3": "Accounting",
+            "Scholarship": null
+        },
+        {
+            "Date": "Wed 16 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Cook Islands Māori Reo Māori Kūki ‘Āirani",
+            "Level 2": "English",
+            "Level 3": null,
+            "Scholarship": "Religious Studies"
+        },
+        {
+            "Date": "Wed 16 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "History",
+            "Level 2": "Chinese",
+            "Level 3": "Biology",
+            "Scholarship": "German"
+        },
+        {
+            "Date": "Thu 17 Nov",
+            "Time": "9.30 am",
+            "Level 1": "English",
+            "Level 2": "Lea Faka-Tonga\nCook Islands Māori",
+            "Level 3": null,
+            "Scholarship": "English"
+        },
+        {
+            "Date": "Thu 17 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Drama",
+            "Level 2": "Chemistry",
+            "Level 3": "Health",
+            "Scholarship": "Physics"
+        },
+        {
+            "Date": "Fri 18 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Business Studies",
+            "Level 2": "History",
+            "Level 3": "Chemistry",
+            "Scholarship": "Te Reo Rangatira"
+        },
+        {
+            "Date": "Fri 18 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Biology",
+            "Level 2": "Music",
+            "Level 3": "Media Studies",
+            "Scholarship": "Accounting"
+        },
+        {
+            "Date": "Mon 21 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Art History\r\nTe Reo Māori",
+            "Level 2": "Japanese",
+            "Level 3": "Latin\nSocial Studies\nPsychology",
+            "Scholarship": "Chemistry"
+        },
+        {
+            "Date": "Mon 21 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Classical Studies",
+            "Level 2": "Health",
+            "Level 3": "Economics",
+            "Scholarship": null
+        },
+        {
+            "Date": "Tue 22 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Media Studies",
+            "Level 2": "Earth & Space Science",
+            "Level 3": "Drama\nLea Faka-Tonga",
+            "Scholarship": "Geography"
+        },
+        {
+            "Date": "Tue 22 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Chemistry\nChemistry & Biology",
+            "Level 2": "Classical Studies",
+            "Level 3": null,
+            "Scholarship": "Economics"
+        },
+        {
+            "Date": "Wed 23 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Accounting",
+            "Level 2": null,
+            "Level 3": "English",
+            "Scholarship": null
+        },
+        {
+            "Date": "Wed 23 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Home Economics",
+            "Level 2": "Economics",
+            "Level 3": "Korean",
+            "Scholarship": "Media Studies"
+        },
+        {
+            "Date": "Thu 24 Nov",
+            "Time": "9.30 am",
+            "Level 1": "German",
+            "Level 2": "Biology",
+            "Level 3": "Geography",
+            "Scholarship": null
+        },
+        {
+            "Date": "Thu 24 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Dance",
+            "Level 2": "Te Reo Rangatira",
+            "Level 3": "Physics",
+            "Scholarship": null
+        },
+        {
+            "Date": "Fri 25 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Physics\nPhysics Earth & Space\nScience",
+            "Level 2": "Home Economics",
+            "Level 3": "Classical Studies",
+            "Scholarship": "Te Reo Māori"
+        },
+        {
+            "Date": "Fri 25 Nov",
+            "Time": "2.00 pm",
+            "Level 1": null,
+            "Level 2": "German",
+            "Level 3": "Home Economics",
+            "Scholarship": "Art History"
+        },
+        {
+            "Date": "Tue 29 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Japanese",
+            "Level 2": "Latin",
+            "Level 3": "Te Reo Māori",
+            "Scholarship": null
+        },
+        {
+            "Date": "Tue 29 Nov",
+            "Time": "2.00 pm",
+            "Level 1": null,
+            "Level 2": "French",
+            "Level 3": "Spanish",
+            "Scholarship": "Latin"
+        },
+        {
+            "Date": "Wed 30 Nov",
+            "Time": "9.30 am",
+            "Level 1": "Religious Studies",
+            "Level 2": "Business Studies",
+            "Level 3": "French",
+            "Scholarship": "Japanese"
+        },
+        {
+            "Date": "Wed 30 Nov",
+            "Time": "2.00 pm",
+            "Level 1": "Latin",
+            "Level 2": "Agricultural &\nHorticultural Science",
+            "Level 3": null,
+            "Scholarship": null
+        },
+        {
+            "Date": "Thu 1 Dec",
+            "Time": "9.30 am",
+            "Level 1": "Health",
+            "Level 2": "Education for Sustainability\nSamoan",
+            "Level 3": "Earth & Space Science",
+            "Scholarship": "Chinese"
+        },
+        {
+            "Date": "Thu 1 Dec",
+            "Time": "2.00 pm",
+            "Level 1": null,
+            "Level 2": null,
+            "Level 3": "Music Studies",
+            "Scholarship": "Spanish"
+        },
+        {
+            "Date": "Fri 2 Dec",
+            "Time": "9:30 am",
+            "Level 1": "Social Studies",
+            "Level 2": "Dance",
+            "Level 3": "Art History",
+            "Scholarship": "Earth & Space Science"
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
