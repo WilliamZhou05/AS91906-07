@@ -158,7 +158,7 @@ class Third(Frame):
         Frame.__init__(self, parent)
 
         self.configure(bg=background_colour)
-        self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))s
+        self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
         self.app_label.place(x=40, y=150)
         
         self.home_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
