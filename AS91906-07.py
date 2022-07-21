@@ -5,6 +5,8 @@ from tkinter import font
 from functools import partial
 from tkcalendar import Calendar
 import json
+import datetime
+
 
 font_colour = "#ffffff"
 border_colour = "#000000"
@@ -41,9 +43,9 @@ class Start(Frame):
                             i = 1
                             break
                     if i==0:
-                        messagebox.showinfo("Error", "Please provide correct username and password.")
+                        messagebox.showinfo("Error", "Please provide a correct username and password.")
             except:
-                messagebox.showinfo("Error", "Couldnt open file")
+                messagebox.showinfo("Error", "Couldn't open file")
      
          
         self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
@@ -74,12 +76,12 @@ class Start(Frame):
                     if reg_password_entry.get()==confirm_password_entry.get():
                         with open("users.txt", "a") as f:
                             f.write(reg_name_entry.get()+","+reg_password_entry.get()+"\n")
-                            messagebox.showinfo("Welcome","You are registered successfully.")
+                            messagebox.showinfo("Welcome","You have been successfully registered.")
                             register_window.destroy()
                     else:
                         messagebox.showinfo("Error","Your password is wrong.")
                 else:
-                    messagebox.showinfo("Error", "Please fill the complete field.")
+                    messagebox.showinfo("Error", "Please fill in all the fields.")
                     
             self.register_button = Button(register_window, text="Sign in",fg = font_colour, font=("Arial",15), bg=border_colour, command=check)
             self.register_button.place(x=170, y=150)
@@ -94,10 +96,29 @@ class Second(Frame):
     def subject(self):
         subject_window = Tk()
         subject_window.resizable(0,0)
+        subject_window.minsize(width=400, height=400)
         subject_window.configure(bg=background_colour)
         subject_window.title("Subjects")
         subject_label = Label(subject_window, text="Please Select Your Subjects",fg = font_colour, font=("Arial",15), bg=border_colour)
-        subject_label.place(x=10, y=10)
+        subject_label.place(x=10, y=10) 
+
+        
+        subjectselect= OptionMenu (subject_window, words1, *subjects_date["Subjects"], command = lambda fff: words1 = fff)
+        subjectselect.place(x=100, y=100) 
+
+        subjectselect2= OptionMenu(subject_window, words2,*subjects_date["Subjects"])
+        subjectselect2.place(x=100, y=140) 
+        
+        subjectselect3= OptionMenu(subject_window, words3,*subjects_date["Subjects"])
+        subjectselect3.place(x=100, y=180) 
+
+        subjectselect4= OptionMenu(subject_window, words4,*subjects_date["Subjects"])
+        subjectselect4.place(x=100, y=220) 
+
+        subjectselect5= OptionMenu(subject_window, words5,*subjects_date["Subjects"])
+        subjectselect5.place(x=100, y=260)
+
+
  
         
     def __init__(self, parent, controller):
@@ -110,26 +131,21 @@ class Second(Frame):
         self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
 
-        self.level1button = Button(self, text="Level 1",bg = border_colour,fg = font_colour, font=("Arial", 15), command=self.subject)
-        self.level1button.place(x=350, y=250)
- 
-        self.level2button = Button(self, text="Level 2",bg = border_colour,fg = font_colour, font=("Arial", 15))
-        self.level2button.place(x=350, y=300)
-
-        self.level3button = Button(self, text="Level 3",bg = border_colour,fg = font_colour, font=("Arial", 15))
+        self.level3button = Button(self, text="Level 3",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.subject())
         self.level3button.place(x=350, y=350)
 
-        self.levelSbutton = Button(self, text="Scholarship",bg = border_colour,fg = font_colour, font=("Arial", 15))
-        self.levelSbutton.place(x=350, y=400)
+        self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
+        self.next_button.place(x=130, y=20)
+
 
     
 
 class Third(Frame):
+
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        
+
         self.configure(bg=background_colour)
-        
         self.app_label = Label(self,bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
         self.app_label.place(x=40, y=150)
         
@@ -138,21 +154,12 @@ class Third(Frame):
         
         self.back_button = Button(self, text="Home",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
-
         cal = Calendar(self,height=800, selectmode='day')
-        date = cal.datetime.today()
-     
-        cal.tag_config('reminder', background='red', foreground='yellow')
-     
+       # date = datetime.datetime.strptime()
+       # cal.calevent_create(date, "test","test")
+
         cal.pack(fill="both",pady=100,padx=100, expand=True)
         
-'''https://pythonprogramming.net/object-oriented-programming-crash-course-tkinter/
-above link explains the new *args,**kwargs arguments used below
-Like "self," actually typing out "args" and "kwargs" is not necessary, the asterisks to the trick. It is just common to add the "args" and "kwargs." 
-So what are these? These are used to pass a variable, unknown, amount of arguments through the method. The difference between them is that args are used to pass non-keyworded arguments, 
-where kwargs are keyword arguments (hence the meshing in the name to make it kwargs). Args are your typical parameters. Kwargs, will basically be dictionaries.
-You can get by just thinking of kwargs as dictionaries that are being passed.
-'''
         
 class Application(Tk):
     def __init__(self, *args, **kwargs):
@@ -178,11 +185,17 @@ class Application(Tk):
         frame.tkraise()
         self.title("Application")
 
-
+words1 = "Please Select Your Subjects"
+words2 = "Please Select Your Subjects"
+words3 = "Please Select Your Subjects"
+words4 = "Please Select Your Subjects"
+words5 = "Please Select Your Subjects"
 #start of program
-if __name__ == '__main__':           
+if __name__ == '__main__':      
+    subjects_date = json.load(open("Term_Dates.json"))    
     app = Application()
     app.maxsize(800,500)
     app.mainloop()
+    
 
 
