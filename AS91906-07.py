@@ -4,6 +4,7 @@ from tkinter import messagebox
 from tkinter import font
 from functools import partial
 from tkcalendar import Calendar
+import json
 
 font_colour = "#ffffff"
 border_colour = "#000000"
@@ -45,7 +46,7 @@ class Start(Frame):
                 messagebox.showinfo("Error", "Couldnt open file")
      
          
-        self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=verify)
+        self.submitbutton = Button(self.border, text="Submit",fg = font_colour,bg=background_colour, font=("Arial", 15), command=lambda: controller.show_frame(Second))
         self.submitbutton.place(x=370, y=225)
         
         def register():
@@ -90,19 +91,39 @@ class Start(Frame):
         self.register_button.place(x=600, y=85)
         
 class Second(Frame):
+    def subject(self):
+        subject_window = Tk()
+        subject_window.resizable(0,0)
+        subject_window.configure(bg=background_colour)
+        subject_window.title("Subjects")
+        subject_label = Label(subject_window, text="Please Select Your Subjects",fg = font_colour, font=("Arial",15), bg=border_colour)
+        subject_label.place(x=10, y=10)
+ 
+        
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         self.configure(bg=background_colour)
         
         self.title_label = Label(self, text="Exam Planner 2022",bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
-        self.title_label.place(x=40, y=150)        
-        self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Third))
-        self.next_button.place(x=10, y=20)
-        
+        self.title_label.place(x=250, y=100)   
+
         self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
 
-        
+        self.level1button = Button(self, text="Level 1",bg = border_colour,fg = font_colour, font=("Arial", 15), command=self.subject)
+        self.level1button.place(x=350, y=250)
+ 
+        self.level2button = Button(self, text="Level 2",bg = border_colour,fg = font_colour, font=("Arial", 15))
+        self.level2button.place(x=350, y=300)
+
+        self.level3button = Button(self, text="Level 3",bg = border_colour,fg = font_colour, font=("Arial", 15))
+        self.level3button.place(x=350, y=350)
+
+        self.levelSbutton = Button(self, text="Scholarship",bg = border_colour,fg = font_colour, font=("Arial", 15))
+        self.levelSbutton.place(x=350, y=400)
+
+    
+
 class Third(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
@@ -119,11 +140,7 @@ class Third(Frame):
         self.back_button.place(x=70, y=20)
 
         cal = Calendar(self,height=800, selectmode='day')
-        date = cal.datetime.today() + cal.timedelta(days=2)
-        cal.calevent_create(date, 'Hello World', 'message')
-        cal.calevent_create(date, 'Reminder 2', 'reminder')
-        cal.calevent_create(date + cal.timedelta(days=-2), 'Reminder 1', 'reminder')
-        cal.calevent_create(date + cal.timedelta(days=3), 'Message', 'message')
+        date = cal.datetime.today()
      
         cal.tag_config('reminder', background='red', foreground='yellow')
      
