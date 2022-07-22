@@ -143,13 +143,16 @@ class Second(Frame):
         self.configure(bg=background_colour)
         
         self.title_label = Label(self, text="Exam Planner 2022",bg = border_colour,fg = font_colour, font=("Arial Bold", 25))
-        self.title_label.place(x=250, y=100)   
+        self.title_label.place(x=250, y=100) 
+
+        self.title_label = Label(self, text="Please select your subjects before pressing the next button.",bg = border_colour,fg = font_colour, font=("Arial Bold", 15))
+        self.title_label.place(x=125, y=150) 
 
         self.back_button = Button(self, text="Back",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: controller.show_frame(Start))
         self.back_button.place(x=70, y=20)
 
-        self.level3button = Button(self, text="Select Your Subjects:",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.subject())
-        self.level3button.place(x=300, y=350)
+        self.subjectbutton = Button(self, text="Select Your Subjects:",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.subject())
+        self.subjectbutton.place(x=300, y=200)
 
         self.next_button = Button(self, text="Next",bg = border_colour,fg = font_colour, font=("Arial", 15), command=lambda: self.show_calendar(controller))
         self.next_button.place(x=160, y=20)
