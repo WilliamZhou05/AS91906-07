@@ -174,7 +174,7 @@ class Second(Frame):
         self.subjectbutton.place(x=300, y=200)
 
         self.next_button = Button(self, text="Next", bg=bcl, fg=fnc, font=fnts, command=lambda: self.show_calendar(controller))
-        self.next_button.place(x=160, y=20)
+        self.next_button.place(x=700, y=20)
 
 
 # creates the third frame
@@ -240,7 +240,7 @@ class Application(Tk):
         self.title("Application")
 
 # acceses the json file
-subjects_date = json.load(open("Term_Dates.json"))
+subjects_date = json.load(open("termdates.json"))
 # start of program
 if __name__ == '__main__':
     app = Application()
